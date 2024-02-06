@@ -6,7 +6,7 @@ import androidx.room.Room
 class WorkshopRepository private constructor(mCtx: Context) {
     //our app database object
     private val appDatabase: WorkshopRoomDB =
-        Room.databaseBuilder(mCtx, WorkshopRoomDB::class.java, "all_data").build()
+        Room.databaseBuilder(mCtx, WorkshopRoomDB::class.java, "all_data").fallbackToDestructiveMigration().build()
 
     fun getAppDatabase(): WorkshopRoomDB {
         return appDatabase
