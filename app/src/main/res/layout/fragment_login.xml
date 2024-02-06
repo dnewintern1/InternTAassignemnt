@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad_bg"
-    tools:context=".activity.Login">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bluback"
+    tools:context=".activity.Login">\
 
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/login_name"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toTopOf="@+id/rellay1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RelativeLayout
         android:id="@+id/rellay1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp">
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tv_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/login_name"
-            android:textColor="@color/white"
-            android:textSize="30sp" />
+
 
         <LinearLayout
             android:id="@+id/liley1"
@@ -54,13 +62,11 @@
                     android:layout_height="45dp"
                     android:layout_marginTop="5dp"
                     android:autofillHints="yes"
-                    android:background="@drawable/tb_bg"
-                    android:fontFamily="sans-serif-light"
-                    android:hint="@string/username"
+                    android:background="@drawable/editextround"
                     android:inputType="text"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -72,7 +78,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
                     android:paddingTop="30dp"
                     android:text="@string/login_pass"
                     android:textAllCaps="true"
@@ -84,49 +89,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginTop="5dp"
-                    android:autofillHints="yes"
-                    android:background="@drawable/tb_bg"
+                    android:background="@drawable/editextround"
                     android:fontFamily="sans-serif-light"
-                    android:hint="@string/enter_password"
                     android:inputType="textPassword"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="15sp" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/lBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="80dp"
-                android:background="@drawable/tb_bg"
-                android:fontFamily="sans-serif-medium"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:text="@string/login_sub"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/rBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="80dp"
-                android:background="@drawable/tb_bg"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/register_sub"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
 
         </LinearLayout>
 
     </RelativeLayout>
 
-</RelativeLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/rBtn"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/register_sub"
+        android:textAllCaps="false"
+        android:background="@drawable/buttonround"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/lBtn"
+        app:layout_constraintTop_toBottomOf="@+id/lBtn" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/lBtn"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:background="@drawable/buttonround"
+        android:text="@string/login_sub"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rellay1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

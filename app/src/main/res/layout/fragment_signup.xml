@@ -3,103 +3,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad_bg"
+    android:background="@drawable/bluback"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context="activity.Signup">
 
-    <ImageView
-        android:id="@+id/imgView_logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/empty_todo"
-        android:src="@drawable/ic_yt_logo" />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="32dp" />
 
     <EditText
         android:id="@+id/rUsername"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="5dp"
-        android:background="@drawable/tb_bg"
-        android:fontFamily="sans-serif-light"
+        android:background="@drawable/editextround"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15sp"
         android:autofillHints="yes"
         android:hint="@string/username"
         android:inputType="text" />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="8dp"/>
+
 
     <EditText
         android:id="@+id/rEmail"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/tb_bg"
-        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/editextround"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15sp"
         android:autofillHints="yes"
         android:hint="@string/hint"
         android:inputType="textEmailAddress" />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="8dp"/>
 
     <EditText
         android:id="@+id/rPass"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:autofillHints="yes"
-        android:background="@drawable/tb_bg"
-        android:fontFamily="sans-serif-light"
+        android:background="@drawable/editextround"
         android:hint="@string/enter_password"
         android:inputType="textPassword"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15sp" />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="8dp"/>
 
     <EditText
         android:id="@+id/rConPass"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:autofillHints="yes"
-        android:background="@drawable/tb_bg"
-        android:fontFamily="sans-serif-light"
+        android:background="@drawable/editextround"
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="15sp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/tb_bg"
-        android:fontFamily="sans-serif-medium"
+        android:background="@drawable/buttonround"
         android:paddingLeft="70dp"
         android:paddingRight="70dp"
         android:text="@string/register_sub"

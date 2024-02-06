@@ -13,12 +13,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.commit {
-                setReorderingAllowed(true)
-                add<AvailableWorkshops>(R.id.fragment_available_workshops)
-            }
-        }
+
+        val fragmentA = AvailableWorkshops()
+        val fragmentB = Dashboard()
+        val fragmentC = Signup()
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_login, fragmentB)
+            .commit()
+
+
+//        if (savedInstanceState == null) {
+//            supportFragmentManager.commit {
+//                setReorderingAllowed(true)
+//                add<AvailableWorkshops>(R.id.fragment_available_workshops)
+//            }
+//        }
 
     }
 }
