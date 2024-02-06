@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.base.androidtakotli.R
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
@@ -86,25 +87,34 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
             btn[i] = true
             viewHolder.hideButton()
 
-            val activity = it.context as AppCompatActivity
+            val context = it.context
+            if(context is AppCompatActivity)
+            {
+                val activity = it.context as AppCompatActivity
 
-            val username = viewHolder.preferences.getString("userName", null)
-            val password = viewHolder.preferences.getString("password", null)
+                val username = viewHolder.preferences.getString("userName", null)
+                val password = viewHolder.preferences.getString("password", null)
 
-            if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
-                activity.supportFragmentManager.commit {
-                    replace<Login>(R.id.fragment_login)
-                    setReorderingAllowed(true)
-                    addToBackStack("login") // name can be null
+                if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
+                    activity.supportFragmentManager.commit {
+                        replace<Login>(R.id.fragment_login)
+                        setReorderingAllowed(true)
+                        addToBackStack("login") // name can be null
+                    }
+                } else {
+
+                    activity.supportFragmentManager.commit {
+                        replace<Dashboard>(R.id.fragment_dashboard)
+                        setReorderingAllowed(true)
+                        addToBackStack("dashboard") // name can be null
+                    }
                 }
-            } else {
+            }else
+            {
+                Toast.makeText(context, "Unexpected context type", Toast.LENGTH_SHORT).show()
 
-                activity.supportFragmentManager.commit {
-                    replace<Dashboard>(R.id.fragment_dashboard)
-                    setReorderingAllowed(true)
-                    addToBackStack("dashboard") // name can be null
-                }
             }
+
         }
 
     }

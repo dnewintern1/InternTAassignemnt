@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.kapt")
+
 }
 
 android {
@@ -41,10 +43,15 @@ dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
     //room
-    implementation ("androidx.room:room-runtime:2.6.1")
+//    implementation ("androidx.room:room-runtime:2.4.1")
+
 
    // kapt ("androidx.room:room-compiler:2.6.1")
-    testImplementation ("androidx.room:room-testing:2.6.1")
+ //   testImplementation ("androidx.room:room-testing:2.6.1")
+
+    implementation ("androidx.room:room-runtime:2.4.0")
+    kapt("androidx.room:room-compiler:2.4.0")
+    testImplementation("androidx.room:room-testing:2.4.0")
 
     //coroutines
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
@@ -64,3 +71,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("androidx.fragment:fragment-ktx:1.6.2")
 }
+
+
