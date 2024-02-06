@@ -1,6 +1,7 @@
 package com.base.androidtakotli.activity
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import com.base.androidtakotli.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -30,6 +34,7 @@ class Signup : Fragment() {
     private lateinit var buttonRegister: Button
     private lateinit var rUserName: EditText
     private lateinit var rPassword: EditText
+    private lateinit var rbuttonSkip: TextView
     private lateinit var preferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
     private var username = ""
@@ -55,6 +60,7 @@ class Signup : Fragment() {
         rEmail = view.findViewById(R.id.rEmail)
         rConfirmPassword = view.findViewById(R.id.rConPass)
         buttonRegister = view.findViewById(R.id.register)
+        rbuttonSkip = view.findViewById(R.id.rskip)
 
         buttonRegister.setOnClickListener {
             val activity = it.context as AppCompatActivity
@@ -82,6 +88,11 @@ class Signup : Fragment() {
                 activity.supportFragmentManager.popBackStack()
             }
             Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show()
+        }
+
+        rbuttonSkip.setOnClickListener {
+            val intent = Intent(it.context, MainActivity::class.java)
+            startActivity(intent)
         }
 
         return view

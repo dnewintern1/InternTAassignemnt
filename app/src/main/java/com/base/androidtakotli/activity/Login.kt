@@ -1,6 +1,7 @@
 package com.base.androidtakotli.activity
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
@@ -32,6 +34,7 @@ class Login : Fragment() {
     private lateinit var buttonSignUp: Button
     private lateinit var lUsername: EditText
     private lateinit var lPassword: EditText
+    private lateinit var buttonSkip: TextView
     private lateinit var preferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
 
@@ -55,6 +58,8 @@ class Login : Fragment() {
         lPassword = view.findViewById(R.id.lPass)
         buttonLogin = view.findViewById(R.id.lBtn)
         buttonSignUp = view.findViewById(R.id.rBtn)
+        buttonSkip = view.findViewById(R.id.lskip)
+
 
         buttonLogin.setOnClickListener {
             val activity = it.context as AppCompatActivity
@@ -88,6 +93,13 @@ class Login : Fragment() {
                 addToBackStack("signup") // name can be null
             }
         }
+
+        buttonSkip.setOnClickListener {
+            val intent = Intent(it.context, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
         return view
     }

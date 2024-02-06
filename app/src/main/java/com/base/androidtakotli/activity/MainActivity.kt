@@ -1,18 +1,18 @@
 package com.base.androidtakotli.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.add
-import androidx.fragment.app.commit
+import android.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
 import com.base.androidtakotli.R
 
 class MainActivity : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.title = "My Toolbar"
+        supportActionBar?.subtitle = "Subtitle"
 
         val fragmentA = AvailableWorkshops()
         val fragmentB = Dashboard()
@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_login, fragmentB)
             .commit()
-
 
 //        if (savedInstanceState == null) {
 //            supportFragmentManager.commit {
@@ -32,3 +31,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+

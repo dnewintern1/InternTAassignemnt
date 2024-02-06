@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/login"
+        android:title="Login"/>
+    <item
+        android:id="@+id/signup"
+        android:title="Sign Up"/>
+
+    <item
+        android:id="@+id/workshop"
+        android:title="Available Workshops"/>
+</menu>
